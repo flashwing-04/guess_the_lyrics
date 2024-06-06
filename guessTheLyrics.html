@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guess The Lyrics</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1>Guess The Lyrics</h1>
+        <div id="category-selection">
+            <div id="category-list"></div>
+        </div>
+        <input type="text" id="search-input" placeholder="search for a song" style="display: none;">
+
+        <div id="song-list" style="display:none;"></div>
+        <h2 id="song-title"></h2>
+        
+        <input type="text" id="guess-input" style="display: none;">
+        <div id="lyric-display">
+            <table id="lyric-table"></table>
+        </div>
+        <button id="quit-button" style="display: none;">Quit</button>
+        <button id="restart-button" style="display: none;">Restart</button>
+        <p id="result-message"></p>
+
+        <script src="songs.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,19 @@
+#lyric-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#lyric-table tr{
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+#lyric-table .missing{
+    color: red;
+}
+
+#lyric-display{
+    max-height: 300px; /*TODO --- change to relative value*/
+    overflow-y: auto;
+}
