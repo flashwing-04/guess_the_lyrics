@@ -1,8 +1,16 @@
+/*TODO:
+    - back button(s)
+    - design
+    -songs
+*/
+
 
 var currentSong = {};
 var guessedWords = [];
 var currentMainCategory = "";
 var currentSubCategory = "";
+
+document.addEventListener('DOMContentLoaded', init);
 
 function init(){
     var categoryList = document.getElementById('category-list');
@@ -84,10 +92,12 @@ function startGame(){
     document.getElementById('search-input').style.display = 'none';
     document.getElementById('song-title').innerText = currentSong.title;
     document.getElementById('guess-input').style.display = 'block';
+    document.getElementById('score').style.display = 'block';
     document.getElementById('quit-button').style.display = 'block';
     document.getElementById('restart-button').style.display = 'block';
 
     renderLyricTable();
+    updateScore();
 }
 
 function renderLyricTable(){
@@ -96,7 +106,13 @@ function renderLyricTable(){
 
     currentSong.lyrics.split(' ').forEach((word, index) => {
         var cell = document.createElement('tr');
-        cell.innerText =guessedWords[index] || '\n';
+
+        if(guessedWords[index]== currentSong.lyrics.replace(/[.!'?,-]/g,'').toLowerCase().split(' ')[index]){
+            cell.innerText =  currentSong.lyrics.split(' ')[index];
+        } else{
+            cell.innerText = '\n';
+        }
+
         if(!guessedWords[index]){
             cell.classList.add('missing');
         }
@@ -104,9 +120,17 @@ function renderLyricTable(){
     });
 }
 
+function updateScore(){
+    var score = document.getElementById('score');
+    var numGuessed =0;
+    for(guess of guessedWords) if(guess!='')numGuessed++;
+    var numTotal = currentSong.lyrics.split(' ').length;
+    score.innerText= numGuessed +"/"+ numTotal;
+}
+
 function checkGuess(){
     var userGuess = document.getElementById('guess-input').value.trim().toLowerCase();
-    var lyricsArray = currentSong.lyrics.toLowerCase().split(' ');
+    var lyricsArray = currentSong.lyrics.replace(/[.!'?,-]/g,'').toLowerCase().split(' ');
     var guessArray = userGuess.split(' ');
 
     if(!guessedWords.includes(userGuess)){
@@ -120,21 +144,22 @@ function checkGuess(){
             
 
         renderLyricTable();
+        updateScore();
 
         if(matchFound) document.getElementById('guess-input').value = "";
     }
 
-    if(guessedWords.join(' ').toLowerCase() === currentSong.lyrics.toLowerCase()){
+    if(guessedWords.join(' ').toLowerCase() === currentSong.lyrics.replace(/[.,'?!]/g, '').toLowerCase()){
         document.getElementById('result-message').innerText = "Congratulations! You guessed all the lyrics.";
     }
 }
 
 function quitGame(){
-    currentSong.lyrics.toLowerCase().split(' ').forEach((word, index) =>{
+    currentSong.lyrics.split(' ').forEach((word, index) =>{
         if(!guessedWords.includes(word)){
             var allCells = document.getElementById('lyric-table').children;
             var cell = allCells.item(index);
-        cell.innerText =word;
+            cell.innerText =word;
         }
     });
 }
@@ -142,10 +167,10 @@ function quitGame(){
 function restartGame(){
     guessedWords = [];
     renderLyricTable();
+    updateScore();
+    document.getElementById('result-message').innerText='';
 }
 
 document.getElementById('quit-button').addEventListener('click', quitGame);
 document.getElementById('restart-button').addEventListener('click', restartGame)
 document.getElementById('guess-input').addEventListener('input', checkGuess);
-
-init();
