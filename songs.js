@@ -1,6 +1,8 @@
 //add songs (lyrics)
+
 const songs ={
     "Musicals":{
+        description: "Songs from popular musicals, featuring memorable tunes and powerful performances.",
         "Rent":[
             {
                 title: "Without You",
@@ -130,6 +132,8 @@ const songs ={
     },
 
     "Songs from Drag Queens":{
+        description: "Energetic and expressive tracks performed by well-known drag queens.",
+
         "Adore Delano":[
             {
                 title: "I Adore You",
@@ -225,18 +229,22 @@ const songs ={
         ]
     },
 
-    "80s Songs":[
-        {
-            title: "Don't Stop Believin",
-            lyrics: `just a small town girl livin' in a lonely world she took the midnight train, going anywhere just a city boy born and raised in south detroit he took the midnight train, going anywhere a singer in a smokey room a smell of wine and cheap perfume for a smile, they can share the night it goes on and on and on and on strangers waitin' up and down the boulevard their shadows searchin' in the night streetlights, people livin' just to find emotion hidin' somewhere in the night workin' hard to get my fill everybody wants a thrill payin' anything to roll the dice just one more time some'll win, some will lose some are born to sing the blues whoa, the movie never ends it goes on and on and on and on strangers waitin' up and down the boulevard their shadows searchin' in the night streetlights, people livin' just to find emotion hidin', somewhere in the night don't stop believin' hold on to that feelin' streetlights, people don't stop believin' hold on streetlights, people don't stop believin' hold on to that feelin' streetlights, people`
-        },
-        {
-            title: "Total Eclipse of the Heart",
-            lyrics: `turn around every now and then i get a little bit lonely and you never coming 'round turn around every now and then i get a little bit tired of listening to the sound of my tears turn around every now and then i get a little bit nervous that the best of all the years have gone by turn around every now and then i get a little bit terrified and then i see the look in your eyes turn around, bright eyes every now and then i fall apart turn around, bright eyes every now and then i fall apart turn around every now and then i get a little bit restless and i dream of something wild turn around every now and then i get a little bit helpless and i'm lying like a child in your arms turn around every now and then i get a little bit angry and i know i've got to get out and cry turn around every now and then i get a little bit terrified but then i see the look in your eyes turn around, bright eyes every now and then i fall apart turn around, bright eyes every now and then i fall apart and i need you now tonight and i need you more than ever and if you only hold me tight we'll be holding on forever and we'll only be making it right 'cause we'll never be wrong together we can take it to the end of the line our love is like a shadow on me all of the time i don't know what to do and i'm always in the dark we're living in a powder keg and giving off sparks i really need you tonight forever's gonna start tonight forever's gonna start tonight once upon a time, i was falling in love now i'm only falling apart there's nothing i can do a total eclipse of the heart a total eclipse of the heart and i need you now tonight and i need you more than ever and if you only hold me tight we'll be holding on forever and we'll only be making it right 'cause we'll never be wrong together we can take it to the end of the line your love is like a shadow on me all of the time all of the time i don't know what to do, i'm always in the dark we're living in a powder keg and giving off sparks i really need you tonight forever's gonna start tonight forever's gonna start tonight once upon a time, i was falling in love but now i'm only falling apart nothing i can do a total eclipse of the heart a total eclipse of the heart a total eclipse of the heart a total eclipse of the heart`
-        }
-    ],
+    "80s Songs":{
+        description: "Top hits from the 1980s, featuring iconic melodies and unforgettable rhythms.",
+        songs: [
+            {
+                title: "Don't Stop Believin",
+                lyrics: `just a small town girl livin' in a lonely world she took the midnight train, going anywhere just a city boy born and raised in south detroit he took the midnight train, going anywhere a singer in a smokey room a smell of wine and cheap perfume for a smile, they can share the night it goes on and on and on and on strangers waitin' up and down the boulevard their shadows searchin' in the night streetlights, people livin' just to find emotion hidin' somewhere in the night workin' hard to get my fill everybody wants a thrill payin' anything to roll the dice just one more time some'll win, some will lose some are born to sing the blues whoa, the movie never ends it goes on and on and on and on strangers waitin' up and down the boulevard their shadows searchin' in the night streetlights, people livin' just to find emotion hidin', somewhere in the night don't stop believin' hold on to that feelin' streetlights, people don't stop believin' hold on streetlights, people don't stop believin' hold on to that feelin' streetlights, people`
+            },
+            {
+                title: "Total Eclipse of the Heart",
+                lyrics: `turn around every now and then i get a little bit lonely and you never coming 'round turn around every now and then i get a little bit tired of listening to the sound of my tears turn around every now and then i get a little bit nervous that the best of all the years have gone by turn around every now and then i get a little bit terrified and then i see the look in your eyes turn around, bright eyes every now and then i fall apart turn around, bright eyes every now and then i fall apart turn around every now and then i get a little bit restless and i dream of something wild turn around every now and then i get a little bit helpless and i'm lying like a child in your arms turn around every now and then i get a little bit angry and i know i've got to get out and cry turn around every now and then i get a little bit terrified but then i see the look in your eyes turn around, bright eyes every now and then i fall apart turn around, bright eyes every now and then i fall apart and i need you now tonight and i need you more than ever and if you only hold me tight we'll be holding on forever and we'll only be making it right 'cause we'll never be wrong together we can take it to the end of the line our love is like a shadow on me all of the time i don't know what to do and i'm always in the dark we're living in a powder keg and giving off sparks i really need you tonight forever's gonna start tonight forever's gonna start tonight once upon a time, i was falling in love now i'm only falling apart there's nothing i can do a total eclipse of the heart a total eclipse of the heart and i need you now tonight and i need you more than ever and if you only hold me tight we'll be holding on forever and we'll only be making it right 'cause we'll never be wrong together we can take it to the end of the line your love is like a shadow on me all of the time all of the time i don't know what to do, i'm always in the dark we're living in a powder keg and giving off sparks i really need you tonight forever's gonna start tonight forever's gonna start tonight once upon a time, i was falling in love but now i'm only falling apart nothing i can do a total eclipse of the heart a total eclipse of the heart a total eclipse of the heart a total eclipse of the heart`
+            }
+        ]
+    },
 
     "German Songs":{
+        description: "A variety of popular songs from Germany, showcasing the country's musical talent.",
         "Staubkind":[
             {
                 title: "Song zu viel",
@@ -249,6 +257,7 @@ const songs ={
         ]
     },
     "Others":{
+        description: "A mix of songs that don’t fit into the other categories, offering a bit of everything.",
         "Idina Menzel":[
             {
                 title: "I Stand",

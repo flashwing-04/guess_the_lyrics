@@ -1,7 +1,6 @@
 /*TODO:
-    - back button(s)
-    - design
-    -songs
+    - back button(s) --> reload?
+    -songs more
 */
 
 
@@ -20,8 +19,9 @@ function init(){
     for(const category in songs){
         var categoryItem = document.createElement('div');
         categoryItem.className = 'category-item';
+        var description = songs[category].description
         categoryItem.innerHTML = `<h3>${category}</h3> 
-                                  <p>Click to view subcategories/ songs</p>`;
+                                  <p>${description}</p>`;
         categoryItem.addEventListener('click', () => selectCategory(category));
         categoryList.appendChild(categoryItem);
     }
@@ -50,12 +50,19 @@ function renderSubcategories(){
     categoryList.innerHTML = "";
 
     for(const subcategory in songs[currentMainCategory]){
-        var subcategoryItem = document.createElement('div');
-        subcategoryItem.className = 'category-item';
-        subcategoryItem.innerHTML = `<h3>${subcategory}</h3>
-                                     <p>Click to view Songs</p>`;
-        subcategoryItem.addEventListener('click', () => selectSubcategory(subcategory));
-        categoryList.appendChild(subcategoryItem);
+        if(subcategory!="description"){
+            if(subcategory=="songs"){
+                selectSubcategory(subcategory);
+            }
+            else{
+                var subcategoryItem = document.createElement('div');
+                subcategoryItem.className = 'category-item';
+                subcategoryItem.innerHTML = `<h3>${subcategory}</h3>
+                                            <p>click to view songs</p>`;
+                subcategoryItem.addEventListener('click', () => selectSubcategory(subcategory));
+                categoryList.appendChild(subcategoryItem);
+            }
+        }
     }
 }
 
@@ -91,8 +98,8 @@ function startGame(){
     document.getElementById('song-list').style.display = 'none';
     document.getElementById('search-input').style.display = 'none';
     document.getElementById('song-title').innerText = currentSong.title;
-    document.getElementById('guess-input').style.display = 'block';
-    document.getElementById('score').style.display = 'block';
+    document.getElementById('guess-input').style.display = 'inline-block';
+    document.getElementById('score').style.display = 'inline-block';
     document.getElementById('quit-button').style.display = 'block';
     document.getElementById('restart-button').style.display = 'block';
 
@@ -166,11 +173,11 @@ function quitGame(){
 
 function restartGame(){
     guessedWords = [];
-    renderLyricTable();
-    updateScore();
+    startGame();
     document.getElementById('result-message').innerText='';
 }
 
+document.getElementById('header').addEventListener('click', function() {location.reload()});
 document.getElementById('quit-button').addEventListener('click', quitGame);
 document.getElementById('restart-button').addEventListener('click', restartGame)
 document.getElementById('guess-input').addEventListener('input', checkGuess);

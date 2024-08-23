@@ -1,12 +1,14 @@
 *{
     --backgound-color: #FFFFFF;
     --accent-color1: #000000;
-    --accent-color2: #128058;
-    --accent-color3: #FF66C4;
+    --accent-color2: #45b18acf /*#128058*/;
+    --accent-color3: #f88dcfdc/*#FF66C4*/;
+
+    --font1: 'Poppins', sans-serif;
 
     margin:0;
     padding:0;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font1);
     font-size: 1.13rem;
     box-sizing: border-box;
 }
@@ -16,28 +18,157 @@
     color: var(--backgound-color);
 }
 
+/* ---head--- */
+#header{
+    display: block;
+    padding: 1rem;
+    font-size: 2.5rem;
+    background: var(--backgound-color);
+    border-bottom: 3px solid var(--accent-color1);
+}
 
-/* ------------body------------ */
+h1{
+    font-size: 2.5rem;
+}
 
+#reload{
+    float: right;
+}
 
-/*-----------temp------------------------------------------------------------------------------------------------------*/
+/* ---selection--- */
+.category-item, .song-item{
+    margin: 1rem 10%;
+    padding: 1rem;
 
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+p{
+    font-size: 0.9rem;
+}
+
+/* ---body--- */
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    background: -webkit-linear-gradient(200deg, var(--accent-color2),var(--backgound-color),var(--accent-color3));/* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(200deg, var(--accent-color2),var(--backgound-color),var(--accent-color3));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#container{
+    margin: 0;
+    padding: 1rem;
+    background: transparent;                                      
+}
+
+#song-title{
+    margin: 2rem 0 0 10%;
+    font-family: var(--font1);
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+#guess-input, #search-input{
+    margin: 2rem 0 2rem 10%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--accent-color1);
+}
+
+#score{
+    margin: 2rem 12% 2rem 0;
+    float: right;
+    font-size: 1.3rem;
+}
+
+/* ---table--- */
 #lyric-display{
-    max-height: 300px; /*TODO --- change to relative value*/
+    width: 100%;
+    max-height: 50vh;
     overflow-y: auto;
 }
 
 #lyric-table{
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     border-collapse: collapse;
+
+    background: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #lyric-table tr{
-    padding: 10px;
-    border: 1px solid #000000;
+    height: 1.5rem;
+    border: 1px solid var(--accent-color1);
     text-align: center;
 }
 
 #lyric-table .missing{
-    color: red;
+    color: var(--accent-color3);
+}
+
+/* ---quit/restart--- */
+button{
+    width: 14rem;
+    height: 1.5rem;
+    margin: 1rem 0 0 10%;
+    border: 1px solid var(--accent-color1);
+
+    background: rgba(255, 255, 255, 0.2); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#quit-button:hover{
+    background-color: var(--accent-color3);
+}
+
+#restart-button:hover{
+    background-color: var(--accent-color2);
+}
+
+#result-message{
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1.13rem;
+}
+
+
+/* ---media query--- */
+@media screen and (max-width: 500px) {
+    h1{
+        font-size: 2rem;
+    }
+
+    #song-title{
+        font-size: 1.8rem;
+    }
+
+    #score{
+        font-size: 1rem;
+    }
+    #guess-input{
+        width: 50%;
+        font-size: 1rem;
+    }
+
+    #lyric-table{
+        width: 90%;
+    }
+
+    button{
+        width: 90%;
+        margin: 1rem auto;
+    }
 }
