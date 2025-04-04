@@ -1,8 +1,15 @@
+/*TODO:
+    - back button(s) --> reload?
+    -songs more
+*/
+
 
 var currentSong = {};
 var guessedWords = [];
 var currentMainCategory = "";
 var currentSubCategory = "";
+
+document.addEventListener('DOMContentLoaded', init);
 
 function init(){
     var categoryList = document.getElementById('category-list');
@@ -12,8 +19,9 @@ function init(){
     for(const category in songs){
         var categoryItem = document.createElement('div');
         categoryItem.className = 'category-item';
+        var description = songs[category].description
         categoryItem.innerHTML = `<h3>${category}</h3> 
-                                  <p>Click to view subcategories/ songs</p>`;
+                                  <p>${description}</p>`;
         categoryItem.addEventListener('click', () => selectCategory(category));
         categoryList.appendChild(categoryItem);
     }
@@ -42,12 +50,19 @@ function renderSubcategories(){
     categoryList.innerHTML = "";
 
     for(const subcategory in songs[currentMainCategory]){
-        var subcategoryItem = document.createElement('div');
-        subcategoryItem.className = 'category-item';
-        subcategoryItem.innerHTML = `<h3>${subcategory}</h3>
-                                     <p>Click to view Songs</p>`;
-        subcategoryItem.addEventListener('click', () => selectSubcategory(subcategory));
-        categoryList.appendChild(subcategoryItem);
+        if(subcategory!="description"){
+            if(subcategory=="songs"){
+                selectSubcategory(subcategory);
+            }
+            else{
+                var subcategoryItem = document.createElement('div');
+                subcategoryItem.className = 'category-item';
+                subcategoryItem.innerHTML = `<h3>${subcategory}</h3>
+                                            <p>click to view songs</p>`;
+                subcategoryItem.addEventListener('click', () => selectSubcategory(subcategory));
+                categoryList.appendChild(subcategoryItem);
+            }
+        }
     }
 }
 
@@ -83,11 +98,13 @@ function startGame(){
     document.getElementById('song-list').style.display = 'none';
     document.getElementById('search-input').style.display = 'none';
     document.getElementById('song-title').innerText = currentSong.title;
-    document.getElementById('guess-input').style.display = 'block';
+    document.getElementById('guess-input').style.display = 'inline-block';
+    document.getElementById('score').style.display = 'inline-block';
     document.getElementById('quit-button').style.display = 'block';
     document.getElementById('restart-button').style.display = 'block';
 
     renderLyricTable();
+    updateScore();
 }
 
 function renderLyricTable(){
@@ -96,7 +113,13 @@ function renderLyricTable(){
 
     currentSong.lyrics.split(' ').forEach((word, index) => {
         var cell = document.createElement('tr');
-        cell.innerText =guessedWords[index] || '\n';
+
+        if(guessedWords[index]== currentSong.lyrics.replace(/[.!'?,-]/g,'').toLowerCase().split(' ')[index]){
+            cell.innerText =  currentSong.lyrics.split(' ')[index];
+        } else{
+            cell.innerText = '\n';
+        }
+
         if(!guessedWords[index]){
             cell.classList.add('missing');
         }
@@ -104,9 +127,17 @@ function renderLyricTable(){
     });
 }
 
+function updateScore(){
+    var score = document.getElementById('score');
+    var numGuessed =0;
+    for(guess of guessedWords) if(guess!='')numGuessed++;
+    var numTotal = currentSong.lyrics.split(' ').length;
+    score.innerText= numGuessed +"/"+ numTotal;
+}
+
 function checkGuess(){
     var userGuess = document.getElementById('guess-input').value.trim().toLowerCase();
-    var lyricsArray = currentSong.lyrics.toLowerCase().split(' ');
+    var lyricsArray = currentSong.lyrics.replace(/[.!'?,-]/g,'').toLowerCase().split(' ');
     var guessArray = userGuess.split(' ');
 
     if(!guessedWords.includes(userGuess)){
@@ -120,32 +151,33 @@ function checkGuess(){
             
 
         renderLyricTable();
+        updateScore();
 
         if(matchFound) document.getElementById('guess-input').value = "";
     }
 
-    if(guessedWords.join(' ').toLowerCase() === currentSong.lyrics.toLowerCase()){
+    if(guessedWords.join(' ').toLowerCase() === currentSong.lyrics.replace(/[.,'?!]/g, '').toLowerCase()){
         document.getElementById('result-message').innerText = "Congratulations! You guessed all the lyrics.";
     }
 }
 
 function quitGame(){
-    currentSong.lyrics.toLowerCase().split(' ').forEach((word, index) =>{
+    currentSong.lyrics.split(' ').forEach((word, index) =>{
         if(!guessedWords.includes(word)){
             var allCells = document.getElementById('lyric-table').children;
             var cell = allCells.item(index);
-        cell.innerText =word;
+            cell.innerText =word;
         }
     });
 }
 
 function restartGame(){
     guessedWords = [];
-    renderLyricTable();
+    startGame();
+    document.getElementById('result-message').innerText='';
 }
 
+document.getElementById('header').addEventListener('click', function() {location.reload()});
 document.getElementById('quit-button').addEventListener('click', quitGame);
 document.getElementById('restart-button').addEventListener('click', restartGame)
 document.getElementById('guess-input').addEventListener('input', checkGuess);
-
-init();
