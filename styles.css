@@ -1,16 +1,50 @@
+/* Custom Fonts */
+@font-face{
+  font-family: Centra;
+  src: url('./assets/fonts/CentraNo1-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face{
+  font-family: Centra;
+  src: url('./assets/fonts/CentraNo1-Book.ttf') format('truetype') ;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face{
+  font-family: Centra;
+  src: url('./assets/fonts/CentraNo1-Extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
 *{
     --backgound-color: #FFFFFF;
     --accent-color1: #000000;
     --accent-color2: #45b18acf /*#128058*/;
     --accent-color3: #f88dcfdc/*#FF66C4*/;
 
-    --font1: 'Poppins', sans-serif;
-
     margin:0;
     padding:0;
     font-family: var(--font1);
     font-size: 1.13rem;
     box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body{
+    font-weight: 200;
+    overflow-x: hidden;
+    position: relative;
+  
+    background: var(--background-color) !important;
+    color: var(--accent-color1) !important;
+  
+    font-family: 'Centra', sans-serif !important;
 }
 
 ::selection{
@@ -57,13 +91,6 @@ html, body {
     height: 100%;
 }
 
-body {
-    background: -webkit-linear-gradient(200deg, var(--accent-color2),var(--backgound-color),var(--accent-color3));/* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(200deg, var(--accent-color2),var(--backgound-color),var(--accent-color3));/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 #container{
     margin: 0;
     padding: 1rem;
@@ -72,15 +99,16 @@ body {
 
 #song-title{
     margin: 2rem 0 0 10%;
-    font-family: var(--font1);
     font-size: 2rem;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 #guess-input, #search-input{
     margin: 2rem 0 2rem 10%;
+    padding: 0.2rem;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid var(--accent-color1);
+    border-radius: 10px;
 }
 
 #score{
@@ -123,6 +151,7 @@ button{
     height: 1.5rem;
     margin: 1rem 0 0 10%;
     border: 1px solid var(--accent-color1);
+    border-radius: 10px;
 
     background: rgba(255, 255, 255, 0.2); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

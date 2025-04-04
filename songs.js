@@ -5,10 +5,6 @@ const songs ={
         description: "Songs from popular musicals, featuring memorable tunes and powerful performances.",
         "Rent":[
             {
-                title: "Without You",
-                lyrics: `without you, the ground thaws the rain falls the grass grows without you, the seeds root the flowers bloom the children play the stars gleam the poets dream the eagles fly without you the earth turns the sun burns but i die, without you without you, the breeze warms the girl smiles the cloud moves without you, the tides change the boys run the oceans crash the crowds roar the days soar the babies cry without you the moon glows the river flows but i die without you the world revives colors renew but i know blue only blue lonely blue without you without you, the hand gropes the ear hears the pulse beats without you, the eyes gaze the legs walk the lungs breathe the mind churns the mind churn the heart yearns the heart yearns. the tears dry without you life goes on but i'm gone 'cause i die, without you without you without you without you`
-            },
-            {
                 title: "One Song Glory",
                 lyrics: `one song glory one song before i go glory, one song to leave behind find one song, one last refrain glory, from the pretty boy front man who wasted opportunity one song, he had the world at his feet glory, in the eyes of a young girl a young girl find glory, beyond the cheap colored lights one song, before the sun sets glory, on another empty life time flies, time dies glory, one blaze of glory one blaze of glory, glory find glory, in a song that rings true truth like a blazing fire an eternal flame find one song, a song about love glory, from the soul of a young man a young man find the one song before the virus takes hold glory, like a sunset one song to redeem this empty life time flies and then no need to endure anymore time dies`
             },
@@ -133,7 +129,6 @@ const songs ={
 
     "Songs from Drag Queens":{
         description: "Energetic and expressive tracks performed by well-known drag queens.",
-
         "Adore Delano":[
             {
                 title: "I Adore You",
