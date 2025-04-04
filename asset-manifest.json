@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/guess_the_lyrics/static/css/main.51bf9b4e.css",
+    "main.js": "/guess_the_lyrics/static/js/main.aff43ded.js",
+    "static/js/453.f2d2d6c3.chunk.js": "/guess_the_lyrics/static/js/453.f2d2d6c3.chunk.js",
+    "static/media/personal_logo.png": "/guess_the_lyrics/static/media/personal_logo.c576de285b01a717a095.png",
+    "static/media/CentraNo1-Light.ttf": "/guess_the_lyrics/static/media/CentraNo1-Light.6d093a76ff9baa88a20b.ttf",
+    "static/media/CentraNo1-Book.ttf": "/guess_the_lyrics/static/media/CentraNo1-Book.876f15229d71b00ddd89.ttf",
+    "static/media/CentraNo1-Extrabold.ttf": "/guess_the_lyrics/static/media/CentraNo1-Extrabold.8eefb01cda35ba2b3fcf.ttf",
+    "index.html": "/guess_the_lyrics/index.html",
+    "main.51bf9b4e.css.map": "/guess_the_lyrics/static/css/main.51bf9b4e.css.map",
+    "main.aff43ded.js.map": "/guess_the_lyrics/static/js/main.aff43ded.js.map",
+    "453.f2d2d6c3.chunk.js.map": "/guess_the_lyrics/static/js/453.f2d2d6c3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51bf9b4e.css",
+    "static/js/main.aff43ded.js"
+  ]
+}
