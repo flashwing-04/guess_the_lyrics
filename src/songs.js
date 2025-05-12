@@ -100,7 +100,7 @@ const songs ={
             },
             {
                 title: "I'm Not That Girl",
-                lyrics: `hands touch, eyes meet sudden silence, sudden heat hearts leap in a giddy whirl he could be that boy but i'm not that girl don't dream too far don't lose sight of who you are don't remember that rush of joy he could be that boy i'm not that girl every so often we long to steal to the land of whatmighthavebeen but that doesn't soften the ache we feel when reality sets back in blithe smile, lithe limb she who's winsome, she wins him gold hair with a gentle curl that's the girl he chose and heaven knows i'm not that girl don't wish, don't start wishing only wounds the heart i wasn't born for the rose and the pearl there's a girl i know he loves her so i'm not that girl`
+                lyrics: `hands touch, eyes meet sudden silence, sudden heat hearts leap in a giddy whirl he could be that boy but i'm not that girl don't dream too far don't lose sight of who you are don't remember that rush of joy he could be that boy i'm not that girl every so often we long to steal to the land of what might have been but that doesn't soften the ache we feel when reality sets back in blithe smile, lithe limb she who's winsome, she wins him gold hair with a gentle curl that's the girl he chose and heaven knows i'm not that girl don't wish, don't start wishing only wounds the heart i wasn't born for the rose and the pearl there's a girl i know he loves her so i'm not that girl`
             },
             {
                 title: "Defying Gravity",
