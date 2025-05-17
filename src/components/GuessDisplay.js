@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export function GuessDisplay({ currentSong }) {
   const words = currentSong.lyrics.split(' ');
-  const wordsNorm = currentSong.lyrics.replace(/[.!'?,-`′]/g, '').toLowerCase().split(' ');
+  const wordsNorm = currentSong.lyrics.replace(/[.!'?,-`′’"“”]/g, '').toLowerCase().split(' ');
 
   const [guessedWords, setGuessedWords] = useState(Array(words.length).fill(''));
   const [inputValue, setInputValue] = useState('');
