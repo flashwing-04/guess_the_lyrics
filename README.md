@@ -1,49 +1,87 @@
-# Guess The Lyrics 🎶
+# Guess The Lyrics
 
-Welcome to **Guess The Lyrics**. If you think you know your favorite songs inside out, it's time to put your knowledge to the test. This game lets you guess the lyrics and see how well you really know the songs!
+**Guess The Lyrics** is an interactive web game that challenges users to test their knowledge of song lyrics. Players select songs, fill in missing lyrics, and track their accuracy as they play.  
+This project demonstrates front-end development skills with **React.js**, user interaction design, and dynamic data handling.
+
+**Test the game online with a few pre-added songs:** [Click here](https://flashwing-04.github.io/guess_the_lyrics/)
+
+---
 
 ## Table of Contents
-- [How to Play](#how-to-play)
+
+- [Project Highlights](#project-highlights)
+- [How It Works](#how-it-works)
 - [Categories](#categories)
-- [Technology Used](#technology-used)
-- [Installation](#steps-to-run-locally)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Adding / Changing Songs](#adding--changing-songs)
 
+---
 
-### How to Play
+## Project Highlights
 
-1. **Choose Your Category:** Pick a music genre, and sometimes even a subcategory, to start the game.
-   
-2. **Pick a Song:** You'll be given a list of songs to choose from within your selected category. Choose one, and get ready!
+- Interactive lyric guessing game with live scoring.
+- Supports multiple song categories and future expansion to subcategories.
+- Real-time input validation and feedback on correct/incorrect lyrics.
+- Built with a clean, responsive UI for web browsers.
 
-3. **Guess the Lyrics:** Once you've selected your song, you'll see a blank table where correctly guessed lyrics will appear. Start typing in the input fiels to guess.
+---
 
-5. **Check your Accuracy:** See how much of the lyrics you guessed correctly, by looking at the Score beside the input field.
+## How It Works
 
-### Categories
+1. **Select a Category**  
+   Choose a music genre (and eventually a subcategory) to start playing.
 
-... work in progress
+2. **Pick a Song**  
+   Browse a list of available songs in the chosen category and select one.
 
-### Technology Used
+3. **Guess the Lyrics**  
+   Type your guesses into the input fields. Correct guesses appear in the lyric table in real-time.
 
-This project was built using the following technologies:
+4. **Track Your Score**  
+   The score updates as you correctly guess lyrics, allowing players to see their accuracy instantly.
 
-- **React.js** 
-- **Node.js** 
-- **CSS**
+---
 
+## Categories
 
-### Steps to Run Locally
+*Currently under development* – More genres and subcategories will be added in future updates.
 
-1. Clone the repository:
+---
+
+## Tech Stack
+
+- **React.js** – Front-end development and dynamic UI rendering
+- **Node.js** – Development environment
+- **CSS** – Styling and layout design
+
+---
+
+## Getting Started
+
+To run the project locally:
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/guess-the-lyrics.git
    cd guess-the-lyrics
-
-2. Install dependencies and open the development server:
+   ```
+2. **Install dependencies**
    ```bash
    npm install
+   ```
+
+3. **Start the development server**
+   ```bash
    npm start
+   ```
+   
+4. **Open in browser**  
+   Visit http://localhost:3000 to play the game.
 
-3. Open your browser and visit http://localhost:3000 to start playing!
+---
 
-4. You can add Songs under src/songs.js
+## Adding/ Changeing Songs
+
+New songs can be added or edited by modifying the `src/songs.js` file.  
+Follow the existing data structure to ensure consistent functionality.
